@@ -10,6 +10,7 @@ const htmlmin = require('gulp-htmlmin')
 const connect = require('gulp-connect')   //实现livereload
 const open = require('open')    //自动打开浏览器（不会重复打开多个）
 
+console.log('xxx')
 
 // 定义打包构建特定资源的任务
 gulp.task('jsTask', function () {
@@ -20,6 +21,8 @@ gulp.task('jsTask', function () {
     .pipe(uglify())    //压缩
     .pipe(gulp.dest('dist/js'))
     .pipe(connect.reload())
+  
+
 })
 
 
@@ -49,7 +52,7 @@ gulp.task('htmlTask', function() {
 })
 
 // 定义默认任务(关联了n个其它任务)
-// gulp.task('default', ['jsTask','cssTask','htmlTask'])
+gulp.task('default', ['jsTask','cssTask','htmlTask'])
 
 
 //半自动构建（不在需要定义默认任务了）
@@ -70,7 +73,7 @@ gulp.task('livereload', function() {
   // 自动开启链接
   open('http://localhost:5000')
   // 监视目标文件（因为已经生成了html的压缩文件，就不在需要了，因为在html压缩文件中引入了css和js）
-  // gulp.watch('public/js/*.js', ['jsTask']);
+  gulp.watch('public/js/*.js', ['jsTask']);
   gulp.watch('public/index.html', ['htmlTask']);
   gulp.watch(['public/css/*.css', 'public/less/*.less'], ['cssTask'])
 })
