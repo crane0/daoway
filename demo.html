@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    ul,li{margin:0;padding:0;list-style:none;}
+
+    .lunbo-container{position:relative;padding:24px 27px;width:256px;height:256px;border:1px solid #000;overflow:hidden;}
+    .lunbo-container .bd{position:relative;height:100%;z-index:0;}
+    .lunbo-container .bd .img100{display:block;width:256px;height:256px;}
+
+    .lunbo-container .hd{position:absolute;bottom:40px;left:50%;width:110px;margin-left:-55px;padding:2px 5px;height:10px;z-index:10;}/*小圆点*/
+    .lunbo-container .hd .bullet{position:relative;float:left;width:10px;height:10px;background:#fff;margin:0 5px;border-radius:50%;cursor:pointer;z-index:2;}
+    .lunbo-container .hd .bullet.on{background:#ff7200;}
+    .lunbo-container .hd .bullet-bg{position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.5);border-radius:6px;z-index:1;}
+  </style>
+</head>
+<body>
+
+<!-- 轮播图区域 start -->
+<div class="lunbo-container">
+  <div class="hd"><!-- 底部小圆点 -->
+    <ul class="">
+      <li class="bullet"></li>
+      <li class="bullet"></li>
+      <li class="bullet"></li>
+      <li class="bullet"></li>
+      <li class="bullet"></li>
+    </ul>
+    <div class="bullet-bg"></div>
+  </div>
+  <ul class="bd"><!-- 轮播图片 -->
+    <li><a href="##" target="_blank"><img src="http://img.article.pchome.net/00/44/67/59/pic_lib/wm/1.jpg" class="img100"/></a></li>
+    <li><a href="##" target="_blank"><img src="http://img.article.pchome.net/00/44/67/59/pic_lib/wm/3.jpg" class="img100"/></a></li>
+    <li><a href="##" target="_blank"><img src="http://img.article.pchome.net/00/44/67/59/pic_lib/wm/5.jpg" class="img100"/></a></li>
+    <li><a href="##" target="_blank"><img src="http://img.article.pchome.net/00/44/67/59/pic_lib/wm/7.jpg" class="img100"/></a></li>
+    <li><a href="##" target="_blank"><img src="http://www.iconpng.com/png/round_icons_set/Red-Apple.png" class="img100"/></a></li>
+  </ul>
+</div>
+
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.superslide2.com/SuperSlide.2.1.2/jquery.SuperSlide.2.1.2.js"></script>
+<!-- <script type="text/javascript" src="http://s1.xxx.com/common/js/plugin/jquery.SuperSlide.2.1.1.js"></script> -->
+<script type="text/javascript">
+  $(function(){
+    if( $('.lunbo-container').length>0 ){
+      $(".lunbo-container").slide({mainCell:".bd",autoPlay:true,pnLoop:true});
+    }
+  });
+</script>
+</body>
+</html>
