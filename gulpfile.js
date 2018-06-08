@@ -10,12 +10,11 @@ const htmlmin = require('gulp-htmlmin')
 const connect = require('gulp-connect')   //实现livereload
 const open = require('open')    //自动打开浏览器（不会重复打开多个）
 
-console.log('xxx')
 
 // 定义打包构建特定资源的任务
 gulp.task('jsTask', function () {
-  return gulp.src('public/js/*.js') //操作的源文件
-    .pipe(concat('built.js',{newline:';'})) //合并到临时文件,如果是新的行，加分号
+  return gulp.src('public/js/serviceDetail.js') //操作的源文件
+    .pipe(concat('serviceDetail.js',{newline:';'})) //合并到临时文件,如果是新的行，加分号
     .pipe(gulp.dest('dist/js')) //生成到目标文件夹
     .pipe(rename({suffix: '.min'})) //重命名
     .pipe(uglify())    //压缩
@@ -27,7 +26,7 @@ gulp.task('jsTask', function () {
 
 
 gulp.task('lessTask', function () {
-  return gulp.src('public/less/*.less')
+  return gulp.src('public/less/serviceDetail.less')
     .pipe(less())
     .pipe(gulp.dest('public/css'))
     .pipe(connect.reload())
@@ -35,8 +34,8 @@ gulp.task('lessTask', function () {
 
 //在执行cssTask之前，要先执行lessTask
 gulp.task('cssTask',['lessTask'], function () {
-  return gulp.src('public/css/*.css')
-    .pipe(concat('built.css'))
+  return gulp.src('public/css/serviceDetail.css')
+    .pipe(concat('serviceDetail.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(cleanCss({compatibility: 'ie8'}))
@@ -51,8 +50,29 @@ gulp.task('htmlTask', function() {
     .pipe(connect.reload())
 })
 
+gulp.task('htmlTask2', function() {
+  return gulp.src('public/downloadApp.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist'))
+    .pipe(connect.reload())
+})
+
+gulp.task('htmlTask3', function() {
+  return gulp.src('public/serviceProduct.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist'))
+    .pipe(connect.reload())
+})
+
+gulp.task('htmlTask4', function() {
+  return gulp.src('public/serviceDetail.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist'))
+    .pipe(connect.reload())
+})
+
 // 定义默认任务(关联了n个其它任务)
-gulp.task('default', ['jsTask','cssTask','htmlTask'])
+gulp.task('default', ['cssTask','htmlTask','htmlTask2','htmlTask3','htmlTask4'])
 
 
 //半自动构建（不在需要定义默认任务了）
@@ -73,8 +93,11 @@ gulp.task('livereload', function() {
   // 自动开启链接
   open('http://localhost:5000')
   // 监视目标文件（因为已经生成了html的压缩文件，就不在需要了，因为在html压缩文件中引入了css和js）
-  gulp.watch('public/js/*.js', ['jsTask']);
+  // gulp.watch('public/js/*.js', ['jsTask']);
   gulp.watch('public/index.html', ['htmlTask']);
+  gulp.watch('public/downloadApp.html', ['htmlTask2']);
+  gulp.watch('public/serviceProduct.html', ['htmlTask3']);
+  gulp.watch('public/serviceDetail.html', ['htmlTask4']);
   gulp.watch(['public/css/*.css', 'public/less/*.less'], ['cssTask'])
 })
 

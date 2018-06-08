@@ -1,0 +1,292 @@
+@keyframes show {
+  from {
+    transform: translateY(-100%) rotateX(90deg);
+  }
+  to {
+    transform: translateY(0) rotateX(0);
+  }
+}
+#downloadApp-container {
+  width: 100%;
+  background: #fbf8f8;
+}
+#downloadApp-container .header-container {
+  width: 100%;
+  background: #fff;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#downloadApp-container .header-container.on {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: .9;
+  animation: show 1s ease;
+}
+#downloadApp-container .header-container .header {
+  padding: 0 15px;
+  width: 1200px;
+  margin: 0 auto;
+  font-weight: bolder;
+  overflow: hidden;
+}
+#downloadApp-container .header-container .header .right {
+  float: left;
+}
+#downloadApp-container .header-container .header .right img {
+  margin-top: 15px;
+  display: block;
+}
+#downloadApp-container .header-container .header .left {
+  display: flex;
+  float: right;
+  margin-top: 15px;
+}
+#downloadApp-container .header-container .header .left .address {
+  margin-right: 60px;
+  margin-top: 15px;
+}
+#downloadApp-container .header-container .header .left .address a img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+#downloadApp-container .header-container .header .left .address a i {
+  font-style: normal;
+  font-weight: 700;
+  color: #121212;
+}
+#downloadApp-container .header-container .header .left .select {
+  display: flex;
+  margin-top: 15px;
+}
+#downloadApp-container .header-container .header .left .select li a {
+  font-weight: 700;
+  color: #121212;
+  padding: 10px 15px;
+}
+#downloadApp-container .header-container .header .left .select li.active a {
+  color: #e94840;
+  background-color: #fff;
+}
+#downloadApp-container .header-container .header .left .select li:last-child {
+  margin-right: 10px;
+}
+#downloadApp-container .header-container .header .left .select li:last-child a {
+  color: #fff;
+  background: #e94840;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+#downloadApp-container .download-container {
+  width: 100%;
+  height: 420px;
+  background: url(../images/downloadApp/banner.jpg) no-repeat center;
+}
+#downloadApp-container .download-container .download {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 204px;
+  padding-right: 340px;
+}
+#downloadApp-container .download-container .download .phone {
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  width: 308px;
+  height: 96px;
+}
+#downloadApp-container .download-container .download .phone .right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+#downloadApp-container .download-container .download .phone .right .iphone {
+  background: #E62E36;
+  width: 188px;
+  height: 36px;
+  line-height: 36px;
+  margin-top: 5px;
+  border-radius: 6px;
+  font-size: 18px;
+  padding-left: 20px;
+}
+#downloadApp-container .download-container .download .phone .right .iphone.android {
+  background: #A0C842;
+}
+#downloadApp-container .download-container .download .phone .right .iphone a {
+  color: #fff;
+}
+#downloadApp-container .download-container .download .phone .right .iphone a img {
+  vertical-align: middle;
+  margin-right: 10px;
+  padding-bottom: 5px;
+}
+#downloadApp-container .service-container {
+  background: #fff;
+  padding-bottom: 30px;
+}
+#downloadApp-container .service-container .service {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 60px;
+}
+#downloadApp-container .service-container .service p {
+  font-size: 22px;
+  margin-top: 10px;
+  color: #3d3838;
+}
+#downloadApp-container .service-container .service .list {
+  margin-top: 50px;
+}
+#downloadApp-container .service-container .service .list .item {
+  display: inline-block;
+  width: 32.5%;
+  margin-right: 0.5%;
+  height: 216px;
+  border: 1px solid #eaeaea;
+  padding-top: 20px;
+  padding-left: 38px;
+  margin-top: 10px;
+}
+#downloadApp-container .service-container .service .list .item img {
+  float: left;
+}
+#downloadApp-container .service-container .service .list .item .desc {
+  margin-top: 55px;
+}
+#downloadApp-container .service-container .service .list .item .desc .title1 {
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+#downloadApp-container .service-container .service .list .item .desc .title2 {
+  margin-top: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+#downloadApp-container .box1-container {
+  width: 100%;
+  height: 480px;
+}
+#downloadApp-container .box1-container .box1 {
+  width: 1200px;
+  margin: 0 auto;
+}
+#downloadApp-container .box1-container .box1 .left {
+  float: left;
+  margin: 200px 100px;
+  font-size: 22px;
+  text-align: center;
+  color: #3d3838;
+}
+#downloadApp-container .box1-container .box1 .left > img {
+  margin-bottom: 10px;
+}
+#downloadApp-container .box1-container .box1 .right {
+  margin-left: 160px;
+  margin-top: 50px;
+}
+#downloadApp-container .box2-container {
+  width: 100%;
+  height: 480px;
+  background-color: #fff;
+}
+#downloadApp-container .box2-container .box2 {
+  width: 1200px;
+  margin: 0 auto;
+}
+#downloadApp-container .box2-container .box2 .left {
+  margin-left: 160px;
+  margin-top: 50px;
+}
+#downloadApp-container .box2-container .box2 .right {
+  float: right;
+  margin: 190px 0;
+  font-size: 22px;
+  text-align: center;
+  color: #3d3838;
+  position: relative;
+  right: 200px;
+}
+#downloadApp-container .box2-container .box2 .right > img {
+  margin-bottom: 10px;
+}
+#downloadApp-container .ensure {
+  text-align: center;
+  width: 100%;
+  padding-top: 60px;
+  background: #fff;
+}
+#downloadApp-container .ensure h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+#downloadApp-container .ensure h2 span {
+  color: #fb474f;
+  font-weight: 700;
+}
+#downloadApp-container .ensure p {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #3d3838;
+}
+#downloadApp-container .ensure .three {
+  padding-top: 20px;
+  background: #fff;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+#downloadApp-container .ensure .three .item {
+  margin-right: 50px;
+}
+#downloadApp-container .ensure .three .item:last-child {
+  margin-right: 0;
+}
+#downloadApp-container .ensure .three .item img {
+  vertical-align: top;
+}
+#downloadApp-container .city-container {
+  background: #fff;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+#downloadApp-container .city-container .city {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+#downloadApp-container .city-container .city .left {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+}
+#downloadApp-container .city-container .city .options {
+  margin-left: 30px;
+  width: 1090px;
+  line-height: 30px;
+}
+#downloadApp-container .city-container .city .options a {
+  font-size: 16px;
+  color: #898989;
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  font-weight: 200;
+  cursor: pointer;
+}
+#downloadApp-container .copyright p {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #898989;
+  padding-bottom: 10px;
+}

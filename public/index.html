@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>index</title>
-  <link rel="stylesheet" href="css/built.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/index.min.css">
 </head>
 <body>
   <div id="container">
@@ -23,11 +24,11 @@
             </a>
           </div>
           <ul class="select">
-            <li class="active"><a href="javascript:;">首页</a></li>
-            <li><a href="javascript:;">到位APP</a></li>
-            <li><a href="javascript:;">服务商</a></li>
+            <li class="active"><a href="/">首页</a></li>
+            <li><a href="downloadApp.html">到位APP</a></li>
+            <li><a href="serviceProduct.html">服务商</a></li>
             <li><a href="javascript:;">商家入驻</a></li>
-            <li><a href="javascript:;">关于我们</a></li>
+            <li><a href="serviceDetail.html">关于我们</a></li>
             <li><a href="javascript:;">商家登陆</a></li>
           </ul>
         </div>
@@ -41,13 +42,13 @@
         <div class="slideTxtBox">
           <div class="bd">
             <ul>
-              <li class="li1">1</li>
+              <li class="li1"></li>
             </ul>
             <ul>
-              <li class="li2">2</li>
+              <li class="li2"></li>
             </ul>
             <ul>
-              <li class="li3">3</li>
+              <li class="li3"></li>
             </ul>
           </div>
           <div class="hd">
@@ -61,43 +62,7 @@
       </div>
       <!--轮播图片上的导航-->
       <div class="banner-nav">
-        <ul>
-          <li>
-            <!--
-                a标签没有包裹，而是通过绝对定位占据整个热区，
-                因为hover时，这个li下的 ul会显示
-            -->
-            <a href="javascript:;"></a>
-            <i>家庭保洁</i>
-            <img src="./images/right.png" alt="">
-            <ul>
-              <li><a href="javascript:;">小时工</a></li>
-              <li><a href="javascript:;">小时工</a></li>
-              <li><a href="javascript:;">小时工</a></li>
-              <li><a href="javascript:;">小时工</a></li>
-              <li><a href="javascript:;">工</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:;"></a>
-            <i>家庭保洁</i>
-            <img src="./images/right.png" alt="">
-          </li>
-          <li>
-            <a href="javascript:;"></a>
-            <i>家庭保洁</i>
-            <img src="./images/right.png" alt="">
-          </li>
-          <li>
-            <a href="javascript:;"></a>
-            <i>家庭保洁</i>
-            <img src="./images/right.png" alt="">
-          </li>
-          <li>
-            <a href="javascript:;"></a>
-            <i>家庭保洁</i>
-            <img src="./images/right.png" alt="">
-          </li>
+        <ul class="list">
         </ul>
       </div>
 
@@ -216,6 +181,20 @@
 <script src="js/jquery-1.11.1.js"></script>
 <script src="js/SuperSlide.js"></script>
 <script src="js/template.js"></script>
+  <script id="banner" type="text/html">
+    {{each data}}
+    <li class="item">
+      <i>{{$value.serviceIndex}}</i>
+      <img class="img1" src="./images/right.png" alt="">
+      <img class="img2" src="./images/icon1.png" alt="">
+      <ul>
+        {{each $value.serviceType}}
+        <li><a href="javascript:;">{{$value}}</a></li>
+        {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+  </script>
 <script id="box" type="text/html">
   {{each data}}
   <div class="box">

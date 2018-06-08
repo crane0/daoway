@@ -131,48 +131,50 @@
   top: 0;
   left: 112px;
 }
-#container .banner .banner-nav ul li {
+#container .banner .banner-nav .list > .item {
   height: 42px;
   line-height: 42px;
   color: #fff;
   font-size: 16px;
-  position: relative;
   cursor: pointer;
   padding-left: 45px;
 }
-#container .banner .banner-nav ul li:hover {
+#container .banner .banner-nav .list > .item:hover {
   background-color: #60646d;
 }
-#container .banner .banner-nav ul li:hover img {
+#container .banner .banner-nav .list > .item:hover img {
   display: none;
 }
-#container .banner .banner-nav ul li:hover ul {
+#container .banner .banner-nav .list > .item:hover ul {
   display: block;
 }
-#container .banner .banner-nav ul li a {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-#container .banner .banner-nav ul li i {
+#container .banner .banner-nav .list > .item i {
   font-style: normal;
   font-weight: bold;
   margin-right: 20px;
 }
-#container .banner .banner-nav ul li img {
+#container .banner .banner-nav .list > .item img {
   vertical-align: middle;
 }
-#container .banner .banner-nav ul li ul {
+#container .banner .banner-nav .list > .item > ul {
   display: none;
   position: absolute;
   left: 180px;
   top: 0;
   background: rgba(255, 255, 255, 0.9);
   width: 160px;
+  height: 420px;
   padding-left: 45px;
+}
+#container .banner .banner-nav .list > .item > ul li {
+  height: 42px;
+}
+#container .banner .banner-nav .list > .item > ul li > a {
+  color: #121212;
+  font-weight: 700;
+}
+#container .banner .banner-nav .list > .item > ul li:hover > a {
+  color: #e94840;
 }
 #container .box-container .box {
   width: 100%;
