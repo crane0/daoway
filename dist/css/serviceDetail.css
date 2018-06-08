@@ -289,6 +289,10 @@
   background: #fe454a;
   color: #fff;
 }
+#serviceDetail-container .category-list .category-left .paging .page-show a:hover {
+  background: #fe454a;
+  color: #fff;
+}
 #serviceDetail-container .ensure {
   text-align: center;
   width: 100%;
